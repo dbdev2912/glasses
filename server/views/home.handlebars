@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="orders-type-container">
+                <div class="orders-type">
+                    <div class="order-type-btn-container">
+                        <button class="btn btn-primary order-type-btn" type="button" name="button">Đã tiếp nhận</button>
+                    </div>
+                    <div class="order-type-btn-container">
+                        <button class="btn btn-danger order-type-btn" type="button" name="button">Đang vận chuyển</button>
+                    </div>
+                    <div class="order-type-btn-container">
+                        <button class="btn btn-success order-type-btn" type="button" name="button">Đã hoàn thành</button>
+                    </div>
+                </div>
+            </div>
+            <div class="orders-container">
+                {{#each orders}}
+                <div class="order" redirect="/p/{{order_id}}">
+                    <div class="order-head">
+                        <span class="order-span-w5">Mã đơn hàng: {{order_id}}</span>
+                        <span class="order-span-w3">Qty: {{qty}}</span>
+                        <span class="order-span-w2">{{status}}</span>
+                    </div>
+                    <div class="order-dates">
+                        <p class="order-date">
+                            <span class="order-date-title">Ngày đặt: </span><span>{{order_date}}</span>
+                        </p>
+                    </div>
+                </div>
+                {{else}}
+                <h3>Chưa có đơn hàng nào hết</h3>
+                {{/each}}
+            </div>
+        </div>
+        <div class="col-md-7" style="border-left: 1px solid #ccc; border-top: 1px solid #ccc;">
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,303 @@
+.navbar{
+    display: flex;
+    position: fixed;
+    position: -webkit-sticky;
+    top: 0;
+    width: 100%;
+    padding-top: 10px;
+    height: 50px;
+    background: transparent;
+    color: #fff;
+    z-index: 100;
+}
+
+
+.nav-list{
+    display: flex;
+    /* flex-wrap: wrap; */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    width: 80%;
+}
+
+.nav-item{
+    width: 20%;
+    min-width: fit-content;
+    text-align: center;
+    color: inherit;
+}
+
+.nav-link{
+    font-size: 24px;
+    /* color: #fff; */
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    cursor: pointer;
+}
+
+.nav-form{
+    width: fit-content;
+    margin-left: auto;
+    margin-right: 20px;
+    position: relative;
+    width: 20%;
+    text-align: center;
+}
+
+.search-bar{
+    height: 20px;
+    width: -webkit-fill-available;
+    border: 1px solid #ccc;
+    border-radius: 14px;
+    outline: none !important;
+    padding: 5px;
+    padding-left: 15px;
+    font-size: 16px;
+    color: #777;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.search-btn{
+    position: absolute;
+    top: 8px;
+    right: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.search-btn img{
+    width: 20px;
+}
+
+.switcher{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+.switcher-line{
+    display: block;
+    margin-bottom: 5px;
+    width: 30px;
+    border: 2px solid #ccc;
+}
+
+.popular{
+    width: 100%;
+    position: absolute;
+    display: none;
+    background: #fff;
+    top: 70px;
+    left: 0;
+}
+
+.popular *{
+    color: #999;
+}
+
+.products-container .products-title{
+    display: none;
+}
+
+.popular-products{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 16px;
+    padding-top: 24px;
+}
+
+.pop-products-container{
+    width: 80%;
+}
+
+.popular-option{
+    width: 20%;
+}
+
+.pop-list{
+    margin-top: 100px !important;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.pop-item{
+    padding: 0;
+    margin: 0;
+    margin-left: 10px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+}
+
+.pop-item:hover{
+    animation-name: popHover;
+    animation-duration: 0.5s;
+    background: #333;
+    color: #fff;
+}
+
+@keyframes popHover {
+    from{
+        background: #fff;
+        color: #999;
+    }
+    to{
+        background: #333;
+        color: #fff;
+    }
+}
+
+.pop-option{
+    display: block;
+    font-size: 24px;
+    color: inherit;
+}
+
+.popu-show{
+    display: block;
+    animation: dropDown;
+    animation-duration: 1s;
+    transform: translateY(0);
+}
+
+.caret-down{
+    display: block;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 8px;
+    right: -20px;
+    border-left: solid 3px #ccc;
+    border-bottom: solid 3px #ccc;
+    animation-name: toCarDown;
+    animation-duration: 0.5s;
+    transform: rotate(-45deg);
+}
+
+@keyframes toCarDown {
+    from{
+        transform: rotate(135deg);
+    }
+    to{
+        transform: rotate(-45deg);
+    }
+}
+
+.caret-up{
+    display: block;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 8px;
+    right: -20px;
+    border-left: solid 3px #ccc;
+    border-bottom: solid 3px #ccc;
+    animation-name: toCarUp;
+    animation-duration: 0.5s;
+    transform: rotate(135deg);
+}
+
+
+
+
+
+@keyframes toCarUp {
+    from{
+        transform: rotate(-45deg);
+    }to{
+        transform: rotate(135deg);
+    }
+}
+
+@media (max-width: 800px) {
+    .switcher{
+        display: block;
+        margin-left: 15px;
+    }
+    .nav-list{
+        width: 100%;
+        position: absolute;
+        top: 50px;
+        left: -100%;
+        background: #fff !important;
+        padding-bottom: 100%;
+        flex-wrap: wrap;
+    }
+
+    .nav-item{
+        width: 100%;
+        margin: 5px;
+        padding: 5px;
+    }
+    .nav-link{
+        color: #999;
+    }
+
+    .nav-form{
+        width: 50%;
+    }
+
+    .popular{
+        top: 100px;
+        position: unset;
+        background: transparent;
+    }
+
+    .popular-product{
+        width: 50%;
+    }
+    .popular-option{
+        display: none;
+    }
+
+    .pop-products-container{
+        width: 100%;
+    }
+
+}
+
+.from-left{
+    animation-name: fromLeft;
+    animation-duration: 1s;
+    left: 0;
+}
+
+@keyframes fromLeft {
+    from{
+        left: -100%;
+    }
+    to{
+        left: 0;
+    }
+}
+
+.to-left{
+    animation-name: toLeft;
+    animation-duration: 1s;
+    left: -100%;
+}
+
+@keyframes toLeft {
+    from{
+        left: 0;
+    }
+    to{
+        left: -100%;
+    }
+}
+
+@keyframes dropDown {
+    from{
+        transform: translateY(-20px);
+    }
+    to{
+        transform: translateY(0px);
+    }
+}

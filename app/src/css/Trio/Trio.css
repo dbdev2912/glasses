@@ -1,0 +1,164 @@
+.trio{
+    margin-top: 150px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+
+.trio-container{
+    position: absolute;
+    width: 80%;
+    height: 70%;
+    left: 10%;
+    top: 10%;
+}
+
+.trio-card{
+    position: absolute;
+    width: 33%;
+    height: 100%;
+    background: transparent;
+    top: 0;
+}
+
+
+.trio-card-left{
+    left: 0%;
+    transform: scale(0.7);
+    z-index: 1;
+}
+
+.trio-card-mid{
+    left: 34%;
+}
+
+.trio-card-right{
+    left: 68%;
+    transform: scale(0.7);
+    z-index: 1;
+}
+
+
+.left-to-right{
+    animation-name: leftToRight;
+    animation-duration: 0.5s;
+    z-index: 1;
+    left: 68%;
+}
+
+@keyframes leftToRight {
+    from{
+        z-index: 1;
+        left: 0%;
+    }
+    to{
+        z-index: 1;
+        left: 68%;
+    }
+}
+
+
+.right-to-left{
+    animation-name: rightToLeft;
+    animation-duration: 0.5s;
+    left: 0%;
+    z-index: 1;
+}
+
+@keyframes rightToLeft {
+    from{
+        z-index: 1;
+        left: 68%;
+    }
+    to{
+        z-index: 1;
+        left: 0%;
+    }
+}
+
+
+.right-to-mid{
+    animation-name: rightToMid;
+    animation-duration: 0.5s;
+    left: 34%;
+    z-index: 2;
+    transform: scale(1);
+}
+
+@keyframes rightToMid {
+    from{
+        z-index: 2;
+        left: 68%;
+        transform: scale(0.7);
+    }
+    to{
+        z-index: 2;
+        left: 34%;
+        transform: scale(1);
+    }
+}
+
+.mid-to-right{
+    animation-name: midToRight;
+    animation-duration: 0.5s;
+    left: 68%;
+    z-index: 2;
+    transform: scale(0.7);
+}
+
+@keyframes midToRight {
+    from{
+        z-index: 2;
+        left: 34%;
+        transform: scale(1);
+    }
+    to{
+        z-index: 2;
+        left: 68%;
+        transform: scale(0.7);
+    }
+}
+
+
+.mid-to-left{
+    animation-name: midToLeft;
+    animation-duration: 0.5s;
+    left: 0%;
+    z-index: 2;
+    transform: scale(0.7);
+}
+
+@keyframes midToLeft {
+    from{
+        z-index: 2;
+        left: 34%;
+        transform: scale(1);
+    }
+    to{
+        z-index: 2;
+        left: 0%;
+        transform: scale(0.7);
+    }
+}
+
+.left-to-mid{
+    animation-name: leftToMid;
+    animation-duration: 0.5s;
+    left: 34%;
+    z-index: 2;
+    transform: scale(1);
+}
+
+@keyframes leftToMid {
+    from{
+        z-index: 2;
+        left: 0%;
+        transform: scale(0.7);
+    }
+    to{
+        z-index: 2;
+        left: 34%;
+        transform: scale(1);
+    }
+}

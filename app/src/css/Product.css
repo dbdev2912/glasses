@@ -1,0 +1,269 @@
+.products-container{
+    width: 100%;
+    margin-top: 10%;
+    position: relative;
+}
+
+.products-title{
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+
+.products-title h2{
+    color: #777;
+    font-size: 48px;
+    margin: 0;
+}
+
+
+.products-title img{
+    display: block;
+    position: relative;
+    width: 100px;
+    margin: auto;
+}
+
+.products{
+    width: 100%;
+    min-height: 50%;
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    background: #fff;
+}
+
+.product-container{
+    width: 21%;
+    margin: 2%;
+    cursor: pointer;
+}
+
+
+.product{
+    height: auto;
+    position: relative;
+    box-shadow: -2px 5px 10px 0px #888888;
+    border-radius: 5px;
+    animation-name: productDown;
+    animation-duration: 0.5s;
+    margin-top: 25px;
+}
+
+.product-up{
+    animation-name: productUp;
+    animation-duration: 0.5s;
+    margin-top: 0px;
+}
+
+@keyframes productDown {
+    from{
+        margin-top: 0;
+    }
+    to{
+        margin-top: 25px;
+    }
+}
+
+@keyframes productUp {
+    from{
+        margin-top: 25px;
+    }
+    to{
+        margin-top: 0;
+    }
+}
+
+.product-img{
+    width: 100%;
+}
+
+.product-img img{
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+}
+
+.product-content{
+    text-align: center;
+}
+
+.product-name{
+    color: black !important;
+    font-size: 20px;
+    font-weight: bold;
+}
+.product-price{
+    color: orange !important;
+    font-size: 20px;
+}
+
+.pro-detail-btn-hide{
+    display: none !important;
+}
+
+.pro-detail-btn{
+    display: block;
+    background: transparent;
+    color: #333;
+    border: 1px solid #777;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 15px;
+}
+
+
+
+.products-scroll{
+    overflow: hidden;
+    flex-wrap: nowrap;
+    width: fit-content;
+}
+
+.scrollContainer{
+    overflow-x: hidden;
+    width: 840px;
+}
+
+.next{
+    position: absolute;
+    display: block;
+    top: 40%;
+    right: 10%;
+    height: 50px;
+    width: 50px;
+    border-bottom: 8px solid #777;
+    border-left: 8px solid #777;
+    transform: rotate(225deg);
+    z-index: 100;
+    cursor: pointer;
+}
+
+
+.prev{
+    position: absolute;
+    display: block;
+    top: 40%;
+    left: 18%;
+    height: 50px;
+    width: 50px;
+    border-bottom: 8px solid #777;
+    border-left: 8px solid #777;
+    transform: rotate(45deg);
+    z-index: 100;
+    cursor: pointer;
+}
+
+
+.seeAll-btn{
+    width: 200px;
+    margin: auto;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.seeAll-btn button{
+    width: 100%;
+    display: block;
+    position: relative;
+    outline: none;
+    overflow: hidden;
+    background: #fff;
+    border: solid 1px #ccc;
+}
+
+.sa-title{
+    display: block;
+    padding: 5px;
+    position: relative;
+    color: #111;
+    z-index: 10;
+}
+
+.sa-title-light{
+    color: #fff;
+}
+
+.sa-bg{
+    display: block;
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    left: -200px;
+    top: -15px;
+    background: #333;
+}
+
+.sa-bg-move{
+    animation: sa-to-right;
+    animation-duration: 1s;
+    left: 0px;
+}
+
+@keyframes sa-to-right {
+    from{
+        left: -200px;
+    }
+    to{
+        left: 0px;
+    }
+}
+
+
+
+@media (max-width: 800px) {
+    .products-container{
+        height: auto !important;
+    }
+    .product-container{
+        width: 80%;
+        margin: auto;
+        margin-top: 15px;
+    }
+    /* .product-content{
+        position: absolute;
+        bottom: 0;
+        height: auto;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        text-align: center;
+    }
+    .product-name{
+        margin: 0;
+        color: white !important;
+        font-size: 24px;
+        font-weight: bold;
+    }
+    .product-price{
+        margin: 0;
+        color: orange !important;
+        font-size: 24px;
+    } */
+
+    .next{
+        top: 55%;
+        right: 5px;
+
+    }
+
+
+    .prev{
+        top: 55%;
+        left: 15px;
+
+    }
+
+    .products-scroll{
+        overflow: hidden;
+        flex-wrap: nowrap;
+        width: fit-content;
+        margin-left: -25px;
+        margin-top: -25px;
+    }
+
+    .scrollContainer{
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+}

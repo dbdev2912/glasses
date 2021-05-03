@@ -1,0 +1,9 @@
+@media (max-width: 800px) {
+    .social-icon-zone{
+        width: 100%;
+        height: unset;
+    }
+    .social-carousel{
+        width: 100%;
+    }
+}

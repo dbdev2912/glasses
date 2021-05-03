@@ -1,0 +1,60 @@
+<div class="container">
+    <button type="button" href="/oriented" class="btn btn-primary" name="button">Đối tượng khách hàng</button>
+    <button type="button" href="/material" class="btn btn-success" name="button">Chất liệu sản phẩm</button>
+    <button type="button" href="/brand" class="btn btn-info" name="button">Thương hiệu</button>
+    <button type="button" href="/type" class="btn btn-danger" name="button">Loại sản phẩm</button>
+</div>
+<div class="others-form-container">
+    <div class="others-form">
+        <div class="form-group">
+            <label for="">Mã đối tượng khách hàng</label>
+            <input type="text" name="id" value="">
+        </div>
+        <div class="form-group">
+            <label for="">Tên đối tượng khách hàng</label>
+            <input type="text" name="name" value="">
+        </div>
+        <div class="form-group">
+            <input type="button" class="btn btn-primary" id="add" value="Thêm">
+        </div>
+    </div>
+    <div class="table-container">
+        <table class="table">
+            <thead>
+                <th>Mã đối tượng</th>
+                <th>Tên đối tượng</th>
+            </thead>
+            {{#each data}}
+            <tr>
+                <td>{{oriented_id}}</td>
+                <td>{{oriented_name}}</td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+</div>
+
+
+<script>
+    $('button').click(function(){
+        window.location=$(this).attr('href');
+    })
+
+    $("#add").click(function(){
+        $.ajax({
+            url: "/addOther",
+            data: {
+                type: "oriented",
+                id: $('input[name="id"]').val(),
+                name: $('input[name="name"]').val(),
+            },
+            type: "POST",
+            success: function(resp){
+                if(resp.success){
+                    location.reload();
+                }
+            }
+        });
+    });
+
+</script>

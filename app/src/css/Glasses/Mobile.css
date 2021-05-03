@@ -1,0 +1,57 @@
+@media (max-width: 800px) {
+
+    .glasses-imgs-container,
+    .glasses-infors-container{
+        width: 100%;
+    }
+    .glasses-imgs{
+        width: 100%;
+        margin-top: 0
+    }
+    .main-img-container{
+        width: 98%;
+        margin: auto;
+    }
+
+    #responsive-brand-material{
+        flex-wrap: wrap;
+    }
+
+    #responsive-brand-material .hori-child{
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .attachments{
+        width: 100%;
+    }
+    .attachment-container{
+        width: 80%;
+        margin: auto;
+    }
+    .attachment{
+        width: 100%;
+        border-bottom: 1px solid #ccc;
+        margin-top: 25px;
+    }
+
+
+
+    .gl-policy{
+        width: 100%;
+    }
+
+    .policy-col{
+        width: 100%;
+    }
+
+    .policy-col:first-child{
+        border-right: unset;
+        padding-bottom: 25px;
+    }
+
+    .policy-container{
+        width: 80%;
+        margin: auto;
+    }
+}

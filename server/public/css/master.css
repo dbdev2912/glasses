@@ -1,0 +1,295 @@
+/* NAV BAR */
+
+
+/* ORDER */
+
+body{
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar{
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track{
+    background: #fff;
+}
+
+body::-webkit-scrollbar-thumb{
+    background: #999;
+}
+
+body::-webkit-scrollbar-thumb:hover{
+    background: #555;
+}
+
+.orders-type-container{
+    width: 100%;
+}
+
+.orders-type{
+    display: flex;
+    width: 100%;
+}
+
+.order-type-btn-container{
+    width: 31%;
+    margin: 1%;
+}
+
+.order-type-btn{
+    display: block;
+    width: 100%;
+    margin: auto;
+}
+
+.orders-container{
+    width: 100%;
+}
+
+.order{
+    width: 100%;
+    padding: 8px 16px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.order:hover{
+    background: #fafaaa;
+}
+
+.order-head, .order-dates{
+    display: flex;
+    width: 100%;
+}
+
+.order-span-w5{
+    width: 50%;
+}
+
+.order-span-w3{
+    width: 30%;
+}
+
+.order-span-w2{
+    width: 20%;
+    color: #ff0000;
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+.order-date{
+    width: 50%;
+    line-height: 1;
+}
+
+.order-date-title{
+    font-weight: bold;
+}
+
+.detail-container{
+    width: 100%;
+}
+
+.detail-header{
+    width: 100%;
+}
+
+.detail-header h3{
+    font-weight: bold;
+    color: #333;
+}
+
+.detail-header span{
+    font-weight: 100;
+}
+
+.table{
+    margin : 0;
+}
+
+.table tr:first-child td{
+    border-top: none;
+}
+
+.table td:first-child{
+    width: 35%;
+}
+
+.table td:nth-child(2){
+    width: 65%;
+    font-weight: bold;
+}
+
+.customer-infor{
+    margin-top: 25px;
+    border-radius: 15px;
+    padding: 15px;
+    border: 1px solid #ccc;
+}
+
+.order-infor{
+    margin-top: 25px;
+    border-radius: 15px;
+    padding: 15px;
+    border: 1px solid #ccc;
+}
+
+.products{
+
+    width: 530px;
+}
+
+.product{
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: nowrap;
+    position: relative;
+}
+
+.product-img-container{
+    width: 20%;
+}
+
+.product-img-container img{
+    width: 100%;
+}
+
+
+.product-infors{
+    width: 80%;
+    position: relative;
+}
+
+.product-header{
+    width: 100%;
+    margin-left: 15px;
+}
+
+.hori-group{
+    width: 100%;
+    display: flex;
+}
+
+.hori-group .group{
+    width: 50%;
+    padding-left: 15px;
+}
+
+.pro-title{
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+}
+
+.pro-infor{
+    font-size: 14px;
+    font-weight: bold;
+    color: #111;
+}
+
+.pro-util{
+    background: transparent;
+    border: none;
+    outline: none;
+    display: block;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 0;
+    right: -35px
+}
+
+.delete{
+    right: -75px;
+}
+
+.pro-util img{
+    width: 100%;
+}
+
+
+.note{
+    resize: vertical;
+    height: 100px !important;
+    margin-left: 15px;
+    width: 100%;
+}
+
+.confirm-group{
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 50px;
+    width: 530px;
+}
+
+.confirm{
+    width: 50%;
+}
+
+.confirm button{
+    display: block;
+    padding: 5px;
+    width: 50%;
+    margin: auto;
+}
+
+.glasses-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.glasses{
+    width: 31%;
+    margin: 1%;
+
+    text-align: left;
+}
+
+.glasses-img{
+    width: 100%;
+    position: relative;
+}
+
+.glasses .utils{
+    position: absolute;
+    bottom: 0; right: 0;
+    text-align: right;
+}
+
+.glasses-img img{
+    width: 100%;
+}
+
+
+.others-form-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.others-form-container label{
+    display: block;
+}
+
+.others-form{
+    width: 50%;
+    min-width: 400px;
+}
+
+.table-container{
+    margin-top: 50px;
+    width: 50%;
+    min-width: 400px;
+    margin: auto;
+}
+
+.table-container th{
+    background: #333;
+    color: #fff;
+}

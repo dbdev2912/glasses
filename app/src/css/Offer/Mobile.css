@@ -1,0 +1,8 @@
+@media (max-width: 800px) {
+    .offers{
+        margin-bottom: 250px;
+    }
+    .offer{
+        width: 96%;
+    }
+}

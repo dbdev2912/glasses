@@ -1,0 +1,152 @@
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="orders-type-container">
+                <div class="orders-type">
+                    <div class="order-type-btn-container">
+                        <button class="btn btn-primary order-type-btn" type="button" name="accepted">Đã tiếp nhận</button>
+                    </div>
+                    <div class="order-type-btn-container">
+                        <button class="btn btn-danger order-type-btn" type="button" name="shipped">Đang vận chuyển</button>
+                    </div>
+                    <div class="order-type-btn-container">
+                        <button class="btn btn-success order-type-btn" type="button" name="done">Đã hoàn thành</button>
+                    </div>
+                </div>
+            </div>
+            <div class="orders-container">
+                {{#each orders}}
+                <div class="order" redirect="/s/{{order_id}}">
+                    <div class="order-head">
+                        <span class="order-span-w5">Mã đơn hàng: {{order_id}}</span>
+                        <span class="order-span-w3">Qty: {{qty}}</span>
+                        <span class="order-span-w2">{{status}}</span>
+                    </div>
+                    <div class="order-dates">
+                        <p class="order-date">
+                            <span class="order-date-title">Ngày đặt: </span><span>{{order_date}}</span>
+                        </p>
+                    </div>
+                </div>
+                {{else}}
+                <h3>Chưa có đơn hàng nào hết</h3>
+                {{/each}}
+            </div>
+        </div>
+        <div class="col-md-7" style="border-left: 1px solid #ccc; border-top: 1px solid #ccc;">
+            <div class="detail-container">
+                <div class="detail-header">
+                    <h3><span>Đơn hàng: </span> {{order.order_id}}</h3>
+                </div>
+            </div>
+            <div class="customer-infor">
+                <table class="table">
+                    <tr>
+                        <td>Mã khách hàng</td>
+                        <td>{{order.customer_id}}</td>
+                    </tr>
+                    <tr>
+                        <td>Tên khách hàng</td>
+                        <td>{{order.customer_name}}</td>
+                    </tr>
+                    <tr>
+                        <td>Số di động</td>
+                        <td>{{order.phone}}</td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>{{order.email}}</td>
+                    </tr>
+                    <tr>
+                        <td>Địa chỉ</td>
+                        <td>{{order.cadd}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="order-infor">
+                <table class="table">
+                    <tr>
+                        <td>Mã đơn hàng </td>
+                        <td>{{order.order_id}}</td>
+                    </tr>
+                    <tr>
+                        <td>Ngày đặt</td>
+                        <td>{{order.order_date}}</td>
+                    </tr>
+                    <tr>
+                        <td>Số lượng</td>
+                        <td>{{order.qty}}</td>
+                    </tr>
+                    <tr>
+                        <td>Đến </td>
+                        <td>{{order.oadd}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="products">
+                {{#each glasses}}
+                <div class="product-container">
+                    <div class="product" pid="{{product_id}}">
+                        <div class="utils">
+                            <!-- <button class="pro-util modify">
+                                <img src="/img/utils/modify.png">
+                            </button> -->
+                            <button class="pro-util delete">
+                                <img src="/img/utils/delete.png">
+                            </button>
+                        </div>
+                        <div class="product-img-container">
+                            <img src="{{url}}" alt="">
+                        </div>
+                        <div class="product-infors">
+                            <div class="product-header">
+                                <span class="pro-title">Tên sản phẩm: </span> <span class="product-name">{{product_name}}</span>
+                            </div>
+                            <div class="product-body">
+                                <div class="hori-group">
+                                    <div class="group">
+                                        <span class="pro-title">Mã sản phẩm: </span> <span class="pro-infor">{{product_id}}</span>
+                                    </div>
+                                    <div class="group">
+                                        <span class="pro-title">Giá: </span> <span class="pro-infor">{{price}}</span>
+                                    </div>
+                                </div>
+                                <div class="hori-group">
+                                    <div class="group">
+                                        <span class="pro-title">Loại kính: </span> <span class="pro-infor">{{type_group}}</span>
+                                    </div>
+                                    <div class="group">
+                                        <span class="pro-title">Đối tượng </span> <span class="pro-infor">{{oriented_name}}</span>
+                                    </div>
+                                </div>
+                                <div class="hori-group">
+                                    <div class="group">
+                                        <span class="pro-title">Nhãn hiệu: </span> <span class="pro-infor">{{brand_name}}</span>
+                                    </div>
+                                    <div class="group">
+                                        <span class="pro-title">Chất liệu: </span> <span class="pro-infor">{{material_name}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="notes">
+                        <span class="pro-title">Ghi chú</span>
+                        <textarea class="form-control note untouch" rows="8" cols="80">{{note}}</textarea>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            <div class="confirm-group">
+                <div class="confirm">
+                    <button type="button" id="makeDone" order_id="{{order.order_id}}" class="btn btn-success" name="button">Hoàn tất đơn hàng</button>
+                </div>
+                <div class="confirm">
+                    <button type="button" id="cancel" class="btn btn-danger" name="button">Hủy đơn</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

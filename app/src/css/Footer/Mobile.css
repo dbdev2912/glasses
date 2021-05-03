@@ -1,0 +1,59 @@
+@media (max-width: 800px) {
+    .na-field,
+    .na-field-btn{
+        width: 100%;
+    }
+    .na-field-btn button{
+        position: relative;
+        width: 200px;
+        margin-top: 25px;
+    }
+    .notify-assign-label{
+        height: 250px;
+        position: relative;
+    }
+
+    .label-container{
+        position: absolute;
+        bottom: 0;
+    }
+
+    .na-label{
+        margin-left: 5%;
+    }
+
+    .na-input{
+        margin: auto;
+    }
+    .footer-container{
+        padding-bottom: 50px;
+    }
+    .footer-container{
+        flex-wrap: wrap;
+    }
+
+    .footer-utilities{
+        margin-bottom: 50px;
+        width: 100%;
+    }
+
+    .footer-brand{
+        width: 80%;
+        margin: auto;
+    }
+    .footer-contact{
+        width: 100%;
+        margin: auto;
+    }
+
+    .contact-list{
+        display: block;
+        width: 80%;
+        margin: auto;
+        padding: 0;
+    }
+    .footer-utilities{
+        width: unset;
+    }
+
+}

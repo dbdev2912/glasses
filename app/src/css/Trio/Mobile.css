@@ -1,0 +1,48 @@
+@media (max-width: 800px) {
+
+    .left-to-mid{
+        animation-name: leftToMid;
+        animation-duration: 0.5s;
+        left: 20%;
+        width: 60%;
+        z-index: 3;
+        transform: scale(1);
+    }
+
+    @keyframes leftToMid {
+        from{
+            z-index: 3;
+            left: 0%;
+            transform: scale(0.7);
+        }
+        to{
+            z-index: 3;
+            left: 20%;
+            transform: scale(1);
+        }
+    }
+
+    .right-to-mid{
+        animation-name: rightToMid;
+        animation-duration: 0.5s;
+        left: 20%;
+        width: 60%;
+        z-index: 3;
+        transform: scale(1);
+    }
+
+    @keyframes rightToMid {
+        from{
+            z-index: 3;
+            left: 68%;
+            transform: scale(0.7);
+        }
+        to{
+            z-index: 3;
+            left: 20%;
+            transform: scale(1);
+        }
+    }
+
+
+}

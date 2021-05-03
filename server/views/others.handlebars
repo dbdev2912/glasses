@@ -1,0 +1,11 @@
+<div class="container">
+    <button type="button" href="/oriented" class="btn btn-primary" name="button">Đối tượng khách hàng</button>
+    <button type="button" href="/material" class="btn btn-success" name="button">Chất liệu sản phẩm</button>
+    <button type="button" href="/brand" class="btn btn-info" name="button">Thương hiệu</button>
+    <button type="button" href="/type" class="btn btn-danger" name="button">Loại sản phẩm</button>
+</div>
+<script>
+    $('button').click(function(){
+        window.location=$(this).attr('href');
+    })
+</script>

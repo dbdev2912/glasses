@@ -1,0 +1,159 @@
+.footer{
+    width: 100%;
+    position: relative;
+    background: #fff;
+}
+
+.notify-assign{
+    width: 100%;
+    margin-top: 25px;
+}
+
+.notify-assign-label{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.notify-assign-label h1{
+    user-select: none;
+    display: block;
+    margin: 0;
+    margin-top: 50px;
+}
+
+.notify-assign-label span{
+    user-select: none;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.notify-assign-form{
+    padding: 25px;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6));
+}
+
+.na-field{
+    width: 40%;
+    position: relative;
+}
+
+.na-field-btn{
+    width: 20%;
+    position: relative;
+}
+
+.na-field-btn button{
+    width: 80%;
+    display: block;
+    margin: auto;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(0, 255, 0, 0.9), rgba(0, 255, 0, 0.6));
+    font-size: 18px;
+    border: none;
+    outline: none;
+    height: 34px;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.na-field-btn button:hover{
+    background: rgba(0, 255, 0, 0.9);
+}
+
+
+.na-label{
+    color: #fff;
+    font-size: 18px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.na-input{
+    display: block;
+    width: 80%;
+    height: 20px;
+    padding: 5px;
+    padding-left: 16px;
+    font-size: 18px;
+}
+
+.footer-container-theme{
+    width: 100%;
+    min-height: 300px;
+    margin-top: 75px;
+    background: linear-gradient(to left bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9));
+    margin-bottom: -50px;
+}
+
+.footer-container{
+    display: flex;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+.footer-brand{
+    width: 50%;
+}
+
+.brand-logo-container{
+    width: 80%;
+    margin: auto;
+    margin-top: 15px;
+}
+
+.brand-logo{
+    display: block;
+    width: 50%;
+    margin: auto;
+}
+
+.brand-address-container{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+.brand-name{
+    color: #fff;
+}
+.brand-address{
+    color: #fff;
+}
+
+.footer-utilities-container{
+    width: fit-content;
+    margin: auto;
+}
+
+.footer-utilities{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    list-style: none;
+    margin-top: 50px;
+}
+
+.footer-util{
+    min-width: fit-content;
+    margin-right: 15px;
+    color: #ccc;
+    transition: ease-in-out 0.5s color;
+}
+
+.footer-util:hover{
+    color: #fff;
+}
+
+.footer-link{
+    cursor: pointer;
+}
+
+.contact-list{
+    color: #fff;
+}

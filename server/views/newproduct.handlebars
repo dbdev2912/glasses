@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Crop Image Before Upload using CropperJS with PHP</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://unpkg.com/dropzone/dist/dropzone.css" />
+		<link href="https://unpkg.com/cropperjs/dist/cropper.css" rel="stylesheet"/>
+		<script src="https://unpkg.com/dropzone"></script>
+		<script src="https://unpkg.com/cropperjs"></script>
+
+		<style>
+
+		.image_area {
+		  position: relative;
+		}
+
+		img {
+		  	display: block;
+		  	max-width: 100%;
+		}
+
+		.preview {
+  			overflow: hidden;
+  			width: 160px;
+  			height: 160px;
+  			margin: 10px;
+  			border: 1px solid red;
+		}
+
+		.modal-lg{
+  			max-width: 1000px !important;
+		}
+
+		.overlay {
+		  position: absolute;
+		  bottom: 10px;
+		  left: 0;
+		  right: 0;
+		  background-color: rgba(255, 255, 255, 0.5);
+		  overflow: hidden;
+		  height: 0;
+		  transition: .5s ease;
+		  width: 100%;
+		}
+
+		.image_area:hover .overlay {
+		  height: 50%;
+		  cursor: pointer;
+		}
+
+		.text {
+		  color: #333;
+		  font-size: 20px;
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  -webkit-transform: translate(-50%, -50%);
+		  -ms-transform: translate(-50%, -50%);
+		  transform: translate(-50%, -50%);
+		  text-align: center;
+		}
+
+        .form-container{
+            width: 100%;
+        }
+
+        .field{
+            display: block;
+            width: 90%;
+            margin: auto;
+        }
+
+		</style>
+	</head>
+	<body>
+		<div class="container" align="center">
+			<br />
+			<h3 align="center"></h3>
+			<br />
+			<div class="row">
+				<div class="col-md-4">&nbsp;</div>
+				<div class="col-md-4">
+					<div class="image_area">
+						<!-- <form method="post">
+							<label for="upload_image">
+								<img src="img/ezreal.jpg" id="uploaded_image" class="img-responsive img-circle" />
+								<div class="overlay">
+									<div class="text">Click to Change Profile Image</div>
+								</div>
+							</label>
+						</form> -->
+                        <button type="button" id="switch" class="btn btn-danger" name="button">Thêm sản phẩm</button>
+                        <input type="file" name="image" class="image" id="upload_image" style="display:none" />
+					</div>
+			    </div>
+    		<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+			  	<div class="modal-dialog modal-lg" role="document">
+			    	<div class="modal-content">
+			      		<div class="modal-header">
+			        		<h5 class="modal-title">THÊM SẢN PHẨM MỚI</h5>
+			        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          			<span aria-hidden="true">×</span>
+			        		</button>
+			      		</div>
+			      		<div class="modal-body">
+			        		<div class="img-container">
+			            		<div class="row">
+			                		<div class="col-md-8">
+			                    		<img src="" id="sample_image" />
+			                		</div>
+			                		<div class="col-md-4">
+			                    		<div class="form-container text-left">
+                                            <div class="field">
+                                                <label for="">Mã sản phẩm</label>
+                                                <input id="product_id" type="text" class="form-control" name="" value="">
+                                            </div>
+                                            <div class="field">
+                                                <label for="">Tên sản phẩm</label>
+                                                <input id="product_name" type="text" class="form-control" name="" value="">
+                                            </div>
+                                            <div class="field">
+                                                <label for="">Giá</label>
+                                                <input id="price" type="text" class="form-control" name="" value="">
+                                            </div>
+                                            <div class="field">
+                                                <label for="">Thương hiệu</label>
+                                                <select class="form-control" name="brand">
+                                                    {{#each brand}}
+                                                        <option value="{{brand_id}}">{{brand_name}}</option>
+                                                    {{/each}}
+                                                </select>
+                                            </div>
+                                            <div class="field">
+                                                <label for="">Đối tượng khách hàng</label>
+                                                <select class="form-control" name="ori">
+                                                    {{#each oriented}}
+                                                        <option value="{{oriented_id}}">{{oriented_name}}</option>
+                                                    {{/each}}
+                                                </select>
+                                            </div>
+                                            <div class="field">
+                                                <label for="">Loại sản phẩm</label>
+                                                <select class="form-control" name="type">
+                                                    {{#each product_type}}
+                                                        <option value="{{type_id}}">{{type_group}}</option>
+                                                    {{/each}}
+                                                </select>
+                                            </div>
+                                            <div class="field">
+                                                <label for="">Chất liệu chính</label>
+                                                <select class="form-control" name="mater">
+                                                    {{#each material}}
+                                                        <option value="{{material_id}}">{{material_name}}</option>
+                                                    {{/each}}
+                                                </select>
+                                            </div>
+                                        </div>
+			                		</div>
+									<div class="row">
+										<div class="col-md-6">
+											<label for="">Mô tả</label>
+											<textarea id="description" name="description" class="form-control" rows="8" cols="80"></textarea>
+										</div>
+										<div class="col-md-6">
+											<div class="form-container text-left">
+												<div class="field">
+	                                                <label for="">Nước rửa kính</label>
+	                                                <select class="form-control" name="liquid">
+	                                                    {{#each liquid}}
+	                                                        <option value="{{attachment_id}}">{{attachment_name}}</option>
+	                                                    {{/each}}
+	                                                </select>
+	                                            </div>
+												<div class="field">
+	                                                <label for="">Hộp đựng</label>
+	                                                <select class="form-control" name="container">
+	                                                    {{#each container}}
+	                                                        <option value="{{attachment_id}}">{{attachment_name}}</option>
+	                                                    {{/each}}
+	                                                </select>
+	                                            </div>
+												<div class="field">
+	                                                <label for="">Giẻ lau</label>
+	                                                <select class="form-control" name="towel">
+	                                                    {{#each towel}}
+	                                                        <option value="{{attachment_id}}">{{attachment_name}}</option>
+	                                                    {{/each}}
+	                                                </select>
+	                                            </div>
+											</div>
+										</div>
+									</div>
+			            		</div>
+			        		</div>
+			      		</div>
+			      		<div class="modal-footer">
+							<button type="button" id="crop" class="btn btn-primary">Thêm</button>
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+			      		</div>
+			    	</div>
+			  	</div>
+			</div>
+		</div>
+		<div class="container" style="margin-top: 100px">
+			<div class="glasses-container">
+				{{#each products}}
+					<div class="glasses">
+						<div class="glasses-img">
+							<img src="{{url}}" alt="">
+							<div class="utils">
+								<button type="button" class="btn btn-success" value="{{product_id}}" name="updateProduct">Cập nhật</button>
+								<button type="button" class="btn btn-danger" value="{{product_id}}" name="deleteProduct">Xóa sản phẩm</button>
+							</div>
+						</div>
+						<div class="glasses-infor">
+							<h4>MASP: {{product_id}}</h4>
+							<p>Gia: {{price}}</p>
+							<p>Tên sản phẩm: {{product_name}}</p>
+							<p>Nhan hieu: {{brand_name}}</p>
+							<p>Loai kinh: {{type_group}}</p>
+							<p>Chat lieu: {{material_name}}</p>
+							<p>Danh cho: {{oriented_name}}</p>
+							<p>Mo ta: {{description}}</p>
+						</div>
+					</div>
+				{{/each}}
+			</div>
+		</div>
+	</body>
+</html>
+
+<script>
+
+$('#switch').click(function(){
+    $('#upload_image').click();
+})
+
+$(document).ready(function(){
+
+	var $modal = $('#modal');
+
+	var image = document.getElementById('sample_image');
+
+	var cropper;
+
+	$('#upload_image').change(function(event){
+		var files = event.target.files;
+
+		var done = function(url){
+			image.src = url;
+			$modal.modal('show');
+		};
+
+		if(files && files.length > 0)
+		{
+			reader = new FileReader();
+			reader.onload = function(event)
+			{
+				done(reader.result);
+			};
+			reader.readAsDataURL(files[0]);
+		}
+	});
+
+	$modal.on('shown.bs.modal', function() {
+		cropper = new Cropper(image, {
+			aspectRatio: 1,
+			viewMode: 3,
+			preview:'.preview'
+		});
+	}).on('hidden.bs.modal', function(){
+		cropper.destroy();
+   		cropper = null;
+	});
+
+	$('#crop').click(function(){
+		canvas = cropper.getCroppedCanvas({
+			width:400,
+			height:400
+		});
+
+		canvas.toBlob(function(blob){
+			url = URL.createObjectURL(blob);
+			var reader = new FileReader();
+			reader.readAsDataURL(blob);
+			reader.onloadend = function(){
+				var base64data = reader.result;
+                var product_id = $('#product_id').val();
+				var product_name = $('#product_name').val();
+				var description = $('#description').val();
+				var price = $('#price').val();
+
+				var material_id = $('select[name="mater"]').find('option:selected').attr('value');
+				var oriented_id = $('select[name="ori"]').find('option:selected').attr('value');
+				var brand_id    = $('select[name="brand"]').find('option:selected').attr('value');
+				var type_id  	= $('select[name="type"]').find('option:selected').attr('value');
+				var liquid 		= $('select[name="liquid"]').find('option:selected').attr('value');
+				var container	= $('select[name="container"]').find('option:selected').attr('value');
+				var towel 		= $('select[name="towel"]').find('option:selected').attr('value');
+				$.ajax({
+					url:'/newproductRequest',
+					method:'POST',
+					data:{
+                        image:base64data,
+						product_id: product_id,
+						product_name: product_name,
+						description: description,
+						price: price,
+						material_id: material_id,
+						oriented_id: oriented_id,
+						brand_id: brand_id,
+						type_id: type_id,
+						liquid: liquid,
+						container: container,
+						towel: towel,
+                    },
+					success:function(data)
+					{
+						window.location = '/new/product';
+					}
+				});
+			};
+		});
+	});
+});
+
+$('button[name="deleteProduct"]').click(function(){
+	let product_id = $(this).attr('value');
+	let $this = $(this);
+
+	$.ajax({
+		url: "/deleteProduct",
+		type: "POST",
+		data: {
+			product_id
+		},
+		success: function(resp){
+			if(resp.success){
+				$this.parent().parent().parent().remove();
+			}
+		}
+	});
+});
+</script>

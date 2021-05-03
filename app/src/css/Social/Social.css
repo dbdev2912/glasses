@@ -1,0 +1,184 @@
+.social{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.social-container{
+    display: flex;
+    flex-wrap: wrap;
+    height: inherit;
+}
+
+.social-icon-zone{
+    width: 50%;
+    height: inherit;
+    text-align: center;
+}
+
+.icon-container{
+    width: 80%;
+    margin: auto;
+    height: 100px;
+    display: flex;
+    padding: 5%;
+    /* border: 3px solid #111; */
+}
+
+.icon{
+    width: 33%;
+    position: relative;
+    height: inherit;
+}
+
+
+.icon-img{
+    cursor: pointer;
+    display: block;
+    width: 50%;
+    position: absolute;
+    top: 0;
+    left: 25%;
+}
+
+.icon-up{
+    animation-name: bgFadeIn;
+    animation-duration: 0.1s;
+    opacity: 1.0;
+}
+
+@keyframes bgFadeIn {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1.0;
+    }
+}
+
+.icon-down{
+    animation-name: bgFadeOut;
+    animation-duration: 1s;
+    opacity: 0;
+}
+
+@keyframes bgFadeOut {
+    0%{
+        opacity: 1.0;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+
+
+
+
+.social-carousel{
+    width: 45%;
+    height: 300px;
+    margin-top: 9.5%;
+}
+
+.carousel{
+    height: inherit;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: -2px 5px 10px 0px #888888;
+    position: relative;
+}
+
+.car-utils .next{
+    right: 10px;
+    border-left: 5px solid #fff;
+    border-bottom: 5px solid #fff;
+    border-radius: 3px;
+
+}
+
+.car-utils .prev{
+    left: 10px;
+    border-left: 5px solid #fff;
+    border-bottom: 5px solid #fff;
+    border-radius: 3px;
+
+}
+
+.slides{
+    width: fit-content;
+    height: inherit;
+    display: flex;
+}
+
+.slide{
+    height: inherit;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.gradient-theme{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.0));
+    overflow: hidden;
+}
+
+
+.slide-title{
+    text-align: center;
+}
+
+.slide-title img{
+    width: 50px;
+    margin-top: 15px;
+}
+
+#inst h1, #inst span{
+    font-size: 72px;
+    background: -webkit-linear-gradient(red, blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#twi {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.0));
+}
+
+#twi h1, #twi span{
+    color: #4267B2;
+}
+
+#meowth{
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.0));
+}
+
+.btn{
+    background: transparent;
+    display: block;
+    margin: auto;
+    margin-top: 15px;
+    padding: 3px;
+    color: #111;
+    border: 1px solid #111;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background: rgba(255,255,255, 0.5);
+}

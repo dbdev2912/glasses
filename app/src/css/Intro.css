@@ -1,0 +1,105 @@
+.head-intro{
+    position: relative;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-top: 150px;
+    padding-bottom: 50px;
+}
+
+
+.greeting{
+    width: fit-content;
+    width: 400px;
+    margin: auto;
+    text-align: center;
+
+}
+@media (max-width: 400px) {
+    .greeting{
+        display: none;
+    }
+}
+
+.greeting-img{
+    width: 100%;
+}
+
+.greeting-img img{
+    width: 100%;
+}
+
+.greeting-title h1{
+    font-size: 32px;
+    font-weight: bold;
+    font-style: italic;
+    color: #fff;
+}
+
+
+.qualifies{
+    width: 100%;
+    margin: auto;
+}
+.qualifies-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.qualify{
+    width: 33%;
+    position: relative;
+    text-align: center;
+    overflow-y: hidden;
+}
+
+.qualify-title{
+    margin-top: 150px;
+    color: #555;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.qualify-content{
+    width: 80%;
+    margin: auto;
+}
+
+.ql-img-container{
+    position: absolute;
+    top: -500px;
+    height: 650px;
+    left: 37.5%;
+    width: 25%;
+    animation-name: infiniteShake;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes infiniteShake {
+    0%{
+        transform: rotate(5deg);
+    }
+    50%{
+        transform: rotate(-5deg);
+    }
+    100%{
+        transform: rotate(5deg);
+    }
+}
+
+.ql-img-container img{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+@media (max-width: 800px) {
+    .qualify{
+        width: 80%;
+        margin: auto;
+    }
+}
